@@ -8,7 +8,7 @@
     <link rel="stylesheet" href="/static/css/style.css">
 </head>
 <body>
-    <h1 class="mb-4">La Vanguardia - <small class="text-muted">{{rss.feed.title}}</small></h1>
+    <h1 class="mb-4 text-center p-2 mb-3">La Vanguardia - <small class="text-muted">{{rss.feed.title}}</small></h1>
     <div class="container d-flex align-items-center justify-content-center">
         <div class="row">
             {% for item in rss.entries %}
@@ -19,8 +19,8 @@
                             <img src="{{media.url}}" class="img-fluid mb-3" alt="{{item.title}}">
                         {% endfor %}
                         <p class="card-text"><small class="text-muted">{{ item.published }}</small></p>
-                        <p class="card-text">{{ item.category }}</p>
-                        <p class="card-text">{{ item.modified }}</p>
+                        <p class="card-text"><small class="text-muted">{{ item.category }}</small></p>
+                        <p class="card-text"><small class="text-muted">{{ item.modified }}</small></p>
                         <p class="card-text">{{ item.content }}</p>
                     </div>
                     <div class="card-footer">
