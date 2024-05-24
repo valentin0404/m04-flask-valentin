@@ -1,6 +1,6 @@
 from flask import Flask, request, render_template, redirect, url_for, flash
 from flask import request
-import feedparser
+import feedparser, datetime
 
 app = Flask(__name__)
 app.secret_key = '¡3248 97320983 bkjxdlrkfj k2 r9p874989387 98p78oiyylkhçç'
@@ -77,6 +77,16 @@ def insert():
 @app.route('/')
 def index():
     return render_template("index.html")
+
+def format_date(value, format='%d %b %Y %H:%M'):
+    try:
+        # Intentamos convertir el valor de la fecha con el primer formato (fecha de creación)
+        return datetime.datetime.strptime(value, '%d %b %Y %H:%M:%S %z').strftime(format)
+    except ValueError:
+        # Si hay un error, intentamos con el segundo formato (fecha de modificación)
+        return datetime.datetime.strptime(value, '%Y-%m-%dT%H:%M:%S%z').strftime(format)
+
+app.jinja_env.filters['date'] = format_date
 
 @app.route('/lavanguardia/<seccio>')
 def lavanguardia(seccio):

@@ -1,8 +1,76 @@
+.navbar-lavanguardia {
+    background-color: #003366;
+}
+.navbar-lavanguardia .navbar-brand, .navbar-lavanguardia .nav-link {
+    color: white;
+}
+
+.navbar-logo {
+    max-width: 100px;
+    padding: 5px;
+    height: auto;
+}
+
+.navbar a:hover {
+    color: antiquewhite;
+}
+
+.navbar-lavanguardia .nav-link.active {
+    background-color: #0056b3;
+    color: white;
+    font-weight: bold;
+    border-radius: 5px;
+}
+
 body {
-    background-color: beige;
+    background-color: rgba(243, 243, 229, 0.733);
+}
+
+.body {
+    background-color: rgba(243, 243, 229, 0.733);
 }
 
 img {
     width: 400px;
     height: auto;
 }
+
+.card-title a {
+    color: inherit;
+    text-decoration: none;
+}
+
+.card-title a:hover {
+    color: #0056b3;
+    text-decoration: underline;
+}
+
+.card-body {
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+}
+
+.card-body .card-title {
+    margin-bottom: auto;
+}
+
+.card-body .mt-auto {
+    margin-top: auto;
+}
+
+.card-footer {
+    text-align: right;
+}
+
+.card {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.card-img-top {
+    object-fit: cover;
+    height: 200px;
+}
+
